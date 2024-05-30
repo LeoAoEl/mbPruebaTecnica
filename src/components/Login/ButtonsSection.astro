@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import face from "@assets/icons/form/social.webp";
+import google from "@assets/icons/form/google.webp";
+import appleW from "@assets/icons/form/AppleWhite.svg";
+---
+
+<section class="pt-8 flex flex-col">
+  <a
+    href="#"
+    aria-label="Registrarse"
+    class="bg-primary text-black py-2 px-4 font-semibold uppercase rounded-xl text-xl text-center"
+  >
+    iniciar sesión</a
+  >
+  <span class="text-slate-600 pt-1 text-xs"> ¿Olvidaste tu contraseña?</span>
+  <aside class="pt-8 flex flex-row justify-between items-center">
+    <span class="text-slate-600 text-xs">¿No tienes cuenta?</span>
+    <a
+      href="#"
+      aria-label="Registrarse"
+      class="py-1 px-2 bg-black text-white rounded-md text-center uppercase font-semibold"
+      >registrarse</a
+    >
+  </aside>
+  <div class="pt-8">
+    <span class="text-black font-normal text-center"
+      >Inicia sesión con tus redes sociales</span
+    >
+    <div class="flex pt-4 flex-row gap-2">
+      <picture
+        class="rounded-xl border border-gray-300 px-6 py-2 flex items-center justify-center bg-white"
+      >
+        <Image
+          src={google}
+          alt="Google logo"
+          quality="low"
+          format="avif"
+          class="h-6 w-6"
+        />
+      </picture>
+      <picture
+        class="rounded-xl border border-gray-300 px-6 py-2 flex items-center justify-center bg-[#40549c]"
+      >
+        <Image
+          src={face}
+          alt="Facebook logo"
+          quality="low"
+          format="avif"
+          class="h-6 w-6"
+        />
+      </picture>
+      <picture
+        class="rounded-xl border border-gray-300 px-6 py-2 flex items-center justify-center bg-black"
+      >
+        <Image
+          src={appleW}
+          alt="Apple logo"
+          quality="low"
+          format="avif"
+          class="h-6 w-6"
+        />
+      </picture>
+    </div>
+  </div>
+</section>

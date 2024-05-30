@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import LogImage from "@assets/images/LoginImg.webp";
+import ButtonsSection from "./ButtonsSection.astro";
+import Formulario from "./Formulario";
+---
+
+<main class="py-8 flex flex-col md:flex-row">
+  <section class="hidden md:block md:w-1/2">
+    <Image
+      src={LogImage}
+      alt={"Login"}
+      quality={"mid"}
+      loading={"eager"}
+      format={"avif"}
+      class="w-full h-full object-cover"
+    />
+  </section>
+  <aside
+    class="flex flex-row md:flex-col items-center justify-center md:w-1/2 w-full ml-0 lg:ml-8"
+  >
+    <Formulario client:load />
+    <ButtonsSection class="md:w-1/2 w-full" />
+  </aside>
+</main>

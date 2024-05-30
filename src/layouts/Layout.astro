@@ -1,0 +1,33 @@
+---
+import Footer from "@components/Footer.astro";
+import Navbar from "@components/Navbar.astro";
+import LoginNavbar from "@components/Login/LoginNavbar.astro";
+import { ViewTransitions } from "astro:transitions";
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const isHomePage = Astro.url.pathname === "/";
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="mb.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body class="bg-LightBg min-h-screen">
+    {isHomePage ? <LoginNavbar /> : <Navbar />}
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
