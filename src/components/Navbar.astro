@@ -1,0 +1,45 @@
+---
+import Shopping from "@assets/icons/registrar/Shopping.astro";
+import Bell from "@assets/icons/registrar/Bell.astro";
+import SearchIcon from "@assets/icons/registrar/SearchIcon.astro";
+import Container from "./common/Container.astro";
+
+const navOptions = [
+  "Categorías",
+  "Ofertas",
+  "Tiendas oficiales",
+  "Vender",
+  "Marcas",
+];
+---
+
+<nav class="bg-primary h-[136px]">
+  <Container className="flex flex-col justify-between px-6 py-4  ">
+    <section class="flex justify-between items-center mb-2">
+      <div class="flex items-center space-x-4">
+        <span class="font-bold text-lg">LOGO</span>
+        <div class="relative">
+          <input type="search" class="px-4 py-2 rounded w-96 pl-10" />
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <SearchIcon />
+          </div>
+        </div>
+        <button class="bg-white text-black px-6 py-2 rounded"
+          >Registra tu auto</button
+        >
+      </div>
+      <div class="flex items-center space-x-4">
+        <Bell />
+        <Shopping />
+      </div>
+    </section>
+    <aside class="flex justify-between items-center">
+      <div class="flex space-x-4">
+        {navOptions.map((op) => <span class="cursor-pointer">{op}</span>)}
+      </div>
+      <span class="cursor-pointer">Ingresar</span>
+    </aside>
+  </Container>
+</nav>

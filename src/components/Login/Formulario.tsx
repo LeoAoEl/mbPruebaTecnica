@@ -9,7 +9,9 @@ function Formulario() {
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (
     <div className="md:w-1/2 w-full  py-4">
-      <h1 className=" text-black font-semibold text-2xl mb-8">Inicia sesión</h1>
+      <h1 className=" text-black font-semibold text-2xl mb-8  text-center md:text-left">
+        Inicia sesión
+      </h1>
       <div className=" flex flex-col gap-6">
         <Input
           classNames={{ inputWrapper: " bg-LightBg border-black/20 border" }}
