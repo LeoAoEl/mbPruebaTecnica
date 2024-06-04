@@ -17,7 +17,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
     <a
       href={ruta}
       aria-label={ariaL}
-      className={` bg-lime-400 text-black text-center py-2 px-4 rounded-md w-full ${className}`}
+      className={` bg-primary text-black text-center py-2 px-4 rounded-md w-full ${className}`}
     >
       {label}
     </a>

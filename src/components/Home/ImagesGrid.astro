@@ -1,0 +1,28 @@
+---
+import one from "@assets/images/home/one.webp";
+import two from "@assets/images/home/two.webp";
+import three from "@assets/images/home/three.webp";
+import four from "@assets/images/home/four.webp";
+import five from "@assets/images/home/five.webp";
+import GridS from "@components/common/GridS.astro";
+import { Image } from "astro:assets";
+
+const images = [one, two, three, four, five];
+---
+
+<GridS subtitle="Tiendas Oficiales" texto="Ver todas">
+  {
+    images.map((img) => {
+      return (
+        <Image
+          src={img}
+          alt={"Tiendas oficiales"}
+          quality={"mid"}
+          loading={"lazy"}
+          format={"avif"}
+          class=" cursor-pointer hover:scale-105 ease-in transition-all"
+        />
+      );
+    })
+  }
+</GridS>

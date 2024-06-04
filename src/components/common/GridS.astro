@@ -1,0 +1,26 @@
+---
+import ArrowRight from "@assets/icons/home/ArrowRight.astro";
+interface Props {
+  subtitle: string;
+  texto?: string;
+}
+const { subtitle, texto } = Astro.props;
+---
+
+<main class="py-4 mt-8">
+  <section class="flex flex-row justify-between mb-4">
+    <h6 class="text-xl text-black text-left">{subtitle}</h6>
+    {
+      texto ? (
+        <span class=" flex gap-2 cursor-pointer">
+          {texto} <ArrowRight />
+        </span>
+      ) : (
+        ""
+      )
+    }
+  </section>
+  <aside class="grid grid-cols-2 md:grid-cols-5 gap-4 transition-all">
+    <slot />
+  </aside>
+</main>
