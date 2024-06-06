@@ -43,7 +43,7 @@ const ImgCard: React.FC<ImgCardProps> = ({
         <div className="pt-4">
           <p className=" text-md text-left">{nombre}</p>
           {showContent && (
-            <span className=" text-slate-400 text-xs line-through ">
+            <span className=" text-rose-600 text-xs line-through ">
               $ 1,842
             </span>
           )}

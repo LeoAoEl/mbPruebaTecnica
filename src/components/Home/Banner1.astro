@@ -3,12 +3,12 @@ import { Image } from "astro:assets";
 import BannerImg from "@assets/images/Banner.webp";
 ---
 
-<section class="w-full">
+<section class="w-full sm:hidden">
   <Image
     src={BannerImg}
     alt={"Banner Descuento"}
     loading={"lazy"}
     format={"avif"}
-    class={"w-full h-auto"}
+    class={"w-full h-auto sm:hidden"}
   />
 </section>

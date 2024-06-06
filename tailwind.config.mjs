@@ -8,7 +8,13 @@ export default {
   ],
   theme: {
     extend: {
-      colors: { primary: "#D8FF00", LightBg: "#DDDEE1", CardBg: "#FFFFFF" },
+      colors: {
+        primary: "#D8FF00",
+        LightBg: "#DDDEE1",
+        CardBg: "#FFFFFF",
+        FooterTexto: "#787664",
+        FooterTitle: "#0A142F",
+      },
     },
   },
   darkMode: "class",

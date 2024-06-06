@@ -1,0 +1,136 @@
+---
+import tiktok from "@assets/icons/footer/tiktok.svg";
+import inta from "@assets/icons/footer/insta.svg";
+import link from "@assets/icons/footer/in.svg";
+import face from "@assets/icons/footer/bxl-facebook.svg";
+import x from "@assets/icons/footer/x.svg";
+import { Image } from "astro:assets";
+const media = [face, inta, x, tiktok, link];
+---
+
+<footer class="bg-white border-t border-gray-200">
+  <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+    <main class="flex justify-evenly items-center md:flex-row flex-col">
+      <div class="flex items-center justify-center">
+        <span class="font-bold text-2xl hidden sm:inline">LOGO</span>
+      </div>
+      <div class="hidden md:flex space-x-20">
+        <div>
+          <p
+            class="leading-5 cursor-pointer tracking-normal text-xl text-FooterTitle hover:text-gray-900 font-normal"
+          >
+            Conoce más
+          </p>
+          <ul class="py-4 space-y-2">
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Nuestra Visión
+            </li>
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Cómo vender
+            </li>
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Cómo comprar
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p
+            class="leading-5 cursor-pointer tracking-normal text-xl text-FooterTitle hover:text-gray-900 font-normal"
+          >
+            Seguridad en
+          </p>
+          <ul class="py-4 space-y-2">
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Envíos
+            </li>
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Formas de pago
+            </li>
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Garantías y Devoluciones
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p
+            class="leading-5 cursor-pointer tracking-normal text-xl text-FooterTitle hover:text-gray-900 font-normal"
+          >
+            Contactanos
+          </p>
+          <ul class="py-4 space-y-2">
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Teléfono: 123-456-7890
+            </li>
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Correo: mail@mail.com
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p
+            class="leading-5 cursor-pointer tracking-normal text-xl text-FooterTitle hover:text-gray-900 font-normal"
+          >
+            Privacidad
+          </p>
+          <ul class="py-4 space-y-2">
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Aviso de privacidad
+            </li>
+            <li
+              class="text-xs font-normal leading-4 text-left text-FooterTitle"
+            >
+              Términos y Condiciones
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p
+            class="leading-5 tracking-normal text-xl text-FooterTitle hover:text-gray-900 font-normal"
+          >
+            Social
+          </p>
+          <div class="flex flex-row gap-8 py-6 items-center justify-center">
+            {
+              media.map((me) => {
+                return (
+                  <Image
+                    alt={"social Media"}
+                    src={me}
+                    class={" cursor-pointer"}
+                  />
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="mt-4 text-center border-t-4 border-primary">
+      <p
+        class="text-base leading-5 cursor-pointer tracking-normal text-FooterTexto pt-4"
+      >
+        Copyright 2023, All Rights Reserved
+      </p>
+    </div>
+  </div>
+</footer>
