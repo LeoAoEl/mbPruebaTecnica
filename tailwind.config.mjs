@@ -14,6 +14,7 @@ export default {
         CardBg: "#FFFFFF",
         FooterTexto: "#787664",
         FooterTitle: "#0A142F",
+        Fondo: "#f9f9fb",
       },
     },
   },

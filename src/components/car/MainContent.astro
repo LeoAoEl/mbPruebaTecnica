@@ -1,5 +1,10 @@
 ---
-
+import IntroContent from "./IntroContent.astro";
+import GridS from "@components/common/GridS.astro";
+import MainCard from "./MainCard";
 ---
 
-<main class="bg-white">Ordenar por: menor precio</main>
+<IntroContent />
+<GridS>
+  <MainCard client:load />
+</GridS>

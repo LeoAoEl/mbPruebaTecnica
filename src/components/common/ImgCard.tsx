@@ -8,6 +8,7 @@ interface ImgCardProps {
   sku: string;
   id: number;
   showContent?: boolean;
+  precio?: number;
 }
 
 const ImgCard: React.FC<ImgCardProps> = ({
@@ -16,7 +17,10 @@ const ImgCard: React.FC<ImgCardProps> = ({
   imagen,
   sku,
   showContent = true,
+  precio,
 }) => {
+  const defaultPrice = 1842;
+  const finalPrice = precio !== undefined ? precio : defaultPrice;
   return (
     <div className=" bg-CardBg text-black rounded-lg shadow overflow-hidden ">
       <div className=" flex flex-col justify-between items-center p-4">
@@ -29,7 +33,7 @@ const ImgCard: React.FC<ImgCardProps> = ({
           <img
             src={imagen}
             alt={nombre}
-            className=" w-full h-48 object-cover"
+            className=" w-full h-48 object-contain"
           />
         )}
 
@@ -47,7 +51,7 @@ const ImgCard: React.FC<ImgCardProps> = ({
               $ 1,842
             </span>
           )}
-          <p className=" text-xl text-black mt-2">$ 1,842</p>
+          <p className=" text-xl text-black mt-2">{finalPrice}</p>
         </div>
       </div>
     </div>

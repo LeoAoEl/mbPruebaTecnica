@@ -9,7 +9,8 @@ interface Props {
 }
 
 const isHomePage = Astro.url.pathname === "/";
-const homeFooterPAge = Astro.url.pathname === "/home";
+const isRegisterPage = Astro.url.pathname === "/registrar";
+
 const { title, description } = Astro.props;
 ---
 
@@ -29,11 +30,11 @@ const { title, description } = Astro.props;
     <ViewTransitions />
     <title>{title}</title>
   </head>
-  <body class="bg-LightBg min-h-screen">
+  <body class="min-h-screen bg-Fondo">
     {isHomePage ? <LoginNavbar /> : <Navbar />}
     <main>
       <slot />
     </main>
-    {homeFooterPAge ? <Footer /> : ""}
+    {!isHomePage && !isRegisterPage && <Footer />}
   </body>
 </html>

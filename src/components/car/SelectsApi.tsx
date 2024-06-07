@@ -6,9 +6,9 @@ function SelectsApi() {
   return (
     <div className=" bg-CardBg gap-4 flex flex-col mt-8 px-2 py-4 rounded-md flex-wrap">
       <span>Vehículos</span>
-      <MarcasSelect />
+      {/* <MarcasSelect />
       <YearSelect />
-      <CategoriaSelect />
+      <CategoriaSelect /> */}
       <CheckBoxL />
     </div>
   );

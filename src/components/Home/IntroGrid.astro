@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import GridS from "@components/common/GridS.astro";
+import Llantas from "@assets/images/home/first/ll.webp";
+import Frenos from "@assets/images/home/first/coso.webp";
+import Rines from "@assets/images/home/first/ring.webp";
+import Batery from "@assets/images/home/first/batery.webp";
+import Seats from "@assets/images/home/first/seats.webp";
+
+const items = [
+  { image: Llantas, name: "Llantas" },
+  { image: Frenos, name: "Frenos" },
+  { image: Rines, name: "Rines" },
+  { image: Batery, name: "Baterías" },
+  { image: Seats, name: "Asientos" },
+];
+---
+
+<GridS subtitle="Categorías">
+  {
+    items.map((i) => (
+      <div class="text-black overflow-hidden">
+        <div class="flex flex-col ">
+          <picture class="bg-CardBg rounded-lg shadow">
+            <Image
+              src={i.image}
+              alt={i.name}
+              class="w-full h-48  object-contain p-2 md:p-4   "
+            />
+          </picture>
+
+          <div class=" pt-1">
+            <p class="text-lg text-left text-black ">{i.name}</p>
+            <span class="text-slate-400 text-sm text-left">Ver todo</span>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</GridS>
