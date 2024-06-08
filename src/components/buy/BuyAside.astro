@@ -1,0 +1,44 @@
+---
+import Shield from "@assets/icons/buy/Shield.astro";
+---
+
+<aside class="hidden md:flex flex-col">
+  <div class="bg-CardBg rounded-md p-4 items-center text-center mb-4">
+    <span class="text-lg text-center">Resumen de compra</span>
+  </div>
+  <section class="bg-CardBg rounded-md p-4 space-y-6">
+    <div
+      class="flex flex-row justify-between items-center border-b-2 py-2 border-slate-200"
+    >
+      <span>Subtotal (4):</span>
+      <span class="text-medium">$ 1000.00 MXN</span>
+    </div>
+    <div
+      class="flex flex-row justify-between items-center border-b-1 border-slate-200"
+    >
+      <span>Envío</span>
+      <span class="text-medium">$ 250.00 MXN</span>
+    </div>
+    <div class="flex flex-row justify-between items-center">
+      <span class="uppercase">Total</span>
+      <span class="text-medium">$ 1250.00 MXN</span>
+    </div>
+
+    <div class="items-center place-content-center flex justify-center">
+      <a
+        href="confirmBuy"
+        class="px-6 py-2 bg-black text-white text-lg rounded-lg">Pagar</a
+      >
+    </div>
+  </section>
+  <div class="py-4 flex items-center justify-center">
+    <button
+      class="px-8 py-4 text-center text-lg bg-primary rounded-lg flex flex-row items-center"
+    >
+      <div class="bg-CardBg p-2 rounded-full">
+        <Shield />
+      </div>
+      <span class="ml-4">Compra 100% segura</span>
+    </button>
+  </div>
+</aside>

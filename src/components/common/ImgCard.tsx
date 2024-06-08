@@ -22,7 +22,7 @@ const ImgCard: React.FC<ImgCardProps> = ({
   const defaultPrice = 1842;
   const finalPrice = precio !== undefined ? precio : defaultPrice;
   return (
-    <div className=" bg-CardBg text-black rounded-lg shadow overflow-hidden ">
+    <div className=" bg-CardBg text-black rounded-lg  overflow-hidden ">
       <div className=" flex flex-col justify-between items-center p-4">
         <div className=" flex flex-row justify-between w-full mb-4">
           <span className=" text-sm text-black">SKU: {sku}</span>
@@ -33,7 +33,7 @@ const ImgCard: React.FC<ImgCardProps> = ({
           <img
             src={imagen}
             alt={nombre}
-            className=" w-full h-48 object-contain"
+            className=" w-full h-48 object-contain "
           />
         )}
 

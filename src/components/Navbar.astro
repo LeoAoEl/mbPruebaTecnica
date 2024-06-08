@@ -7,6 +7,7 @@ import Profile from "@assets/images/nav/profile.svg";
 import Message from "@assets/icons/registrar/Message.astro";
 import { Image } from "astro:assets";
 import Ford from "@assets/icons/nav/carrito.svg";
+import Menu from "@assets/icons/car/Menu.astro";
 const navOptions = [
   "Categorías",
   "Ofertas",
@@ -17,11 +18,14 @@ const navOptions = [
 const { pathname } = Astro.url;
 ---
 
-<nav class="bg-primary h-[134px] md:h-[136px]">
+<nav class="bg-primary h-auto md:h-[136px]">
   <Container className="flex flex-col justify-between py-4 flex-wrap ">
     <section
       class="flex justify-between items-center mb-2 w-full place-content-center flex-row"
     >
+      <div class="items-center md:hidden inline-flex">
+        <Menu />
+      </div>
       <div class="flex items-center space-x-4 w-full lg:w-2/3">
         <a class="font-bold text-2xl hidden sm:inline" href="/home">LOGO</a>
         <div class="relative w-full sm:w-auto flex-grow sm:flex-grow-0">
@@ -50,12 +54,14 @@ const { pathname } = Astro.url;
               alt={"Ford 2022"}
               quality={"low"}
               format={"avif"}
-              class={" pt-1 cursor-pointer"}
+              class={" pt-1 cursor-pointer hidden md:inline"}
             />
           )
         }
       </div>
-      <div class="flex items-center space-x-4 w-full lg:w-1/3 justify-end">
+      <div
+        class="flex items-center space-x-2 md:space-x-4 w-full lg:w-1/3 md:justify-end"
+      >
         {
           pathname === "/" ||
           pathname === "/home" ||
@@ -76,7 +82,7 @@ const { pathname } = Astro.url;
             <Image
               src={Profile}
               alt={"profile"}
-              class={" cursor-pointer h-10 w-10"}
+              class={" cursor-pointer h-10 w- hidden md:inline"}
             />
           )
         }

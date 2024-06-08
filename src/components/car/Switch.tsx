@@ -4,13 +4,13 @@ const SwitchComponent = () => {
   const Data = ["Llega mañana", "Envío gratis", "Tiendas oficiales"];
 
   return (
-    <div className=" flex flex-col gap-4">
+    <div className=" flex md:flex-col flex-row gap-4 ">
       {Data.map((tema, index) => (
         <Switch
           key={index}
           classNames={{
             base: cn(
-              "inline-flex flex-row-reverse w-full max-w-md bg-content1 hover:bg-content2 items-center",
+              "md:inline-flex md:flex-row-reverse flex-wrap-reverse text-center w-fit md:w-full max-w-sm bg-content1 hover:bg-content2  items-center",
               "justify-between cursor-pointer rounded-lg gap-2 p-4 border-2 border-transparent",
               "data-[selected=true]:border-primary"
             ),
@@ -26,8 +26,8 @@ const SwitchComponent = () => {
             ),
           }}
         >
-          <div className="flex flex-col gap-1">
-            <p className="text-medium">{tema}</p>
+          <div className="flex md:flex-col flex-row gap-1">
+            <p className="md:text-medium text-xs">{tema}</p>
           </div>
         </Switch>
       ))}

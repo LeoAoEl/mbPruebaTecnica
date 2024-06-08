@@ -1,0 +1,16 @@
+---
+import ArrowLeft from "@assets/icons/buy/ArrowLeft.astro";
+import BuyCard from "./BuyCard";
+---
+
+<aside class="bg-CardBg w-full md:flex hidden">
+  <div class="flex flex-row p-4">
+    <a href="/car" class="mr-2">
+      <ArrowLeft />
+    </a>
+    <span>Seguir comprando</span>
+  </div>
+</aside>
+<main class="py-4">
+  <BuyCard client:load />
+</main>
