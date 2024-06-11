@@ -13,7 +13,8 @@ const habitualItems = [
   {
     id: 2,
     nombre: "Filtro Mazda 6 2.5, 20009 a 2010 aluminio",
-    imagen: "https://m.media-amazon.com/images/I/31lNK7CNvnL.jpg",
+    imagen:
+      "https://res.cloudinary.com/dk6h3pmlf/image/upload/v1718033775/mbI/ktyugzoofbhzdhhhlbgo.webp",
     sku: "DCAT019939",
     precio: 1842,
   },

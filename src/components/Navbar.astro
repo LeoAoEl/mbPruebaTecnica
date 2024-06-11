@@ -27,7 +27,11 @@ const { pathname } = Astro.url;
         <Menu />
       </div>
       <div class="flex items-center space-x-4 w-full lg:w-2/3">
-        <a class="font-bold text-2xl hidden sm:inline" href="/home">LOGO</a>
+        <a
+          aria-label=" Home button"
+          class="font-bold text-2xl hidden sm:inline"
+          href="/home">LOGO</a
+        >
         <div class="relative w-full sm:w-auto flex-grow sm:flex-grow-0">
           <input
             placeholder="Bujía Mazda 3 de 2015"
@@ -44,6 +48,7 @@ const { pathname } = Astro.url;
           pathname === "/home" || pathname === "/registrar" ? (
             <a
               href="/car"
+              aria-label="Return button"
               class="bg-white text-black px-6 py-4 rounded hidden sm:inline"
             >
               Registra tu auto
@@ -54,6 +59,7 @@ const { pathname } = Astro.url;
               alt={"Ford 2022"}
               quality={"low"}
               format={"avif"}
+              loading={"eager"}
               class={" pt-1 cursor-pointer hidden md:inline"}
             />
           )
@@ -82,6 +88,7 @@ const { pathname } = Astro.url;
             <Image
               src={Profile}
               alt={"profile"}
+              loading={"eager"}
               class={" cursor-pointer h-10 w- hidden md:inline"}
             />
           )
@@ -97,7 +104,15 @@ const { pathname } = Astro.url;
       <div class="flex space-x-4">
         {navOptions.map((op) => <span class="cursor-pointer">{op}</span>)}
       </div>
-      <span class="cursor-pointer">Ingresar</span>
+      {
+        pathname !== "/confirmBuy" &&
+        pathname !== "/car" &&
+        pathname !== "/buyPart" ? (
+          <span class="cursor-pointer">Ingresar</span>
+        ) : (
+          ""
+        )
+      }
     </aside>
   </Container>
 </nav>

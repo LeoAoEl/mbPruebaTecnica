@@ -1,10 +1,26 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/common/Container.astro";
+import ArrowLeft from "@assets/icons/buy/ArrowLeft.astro";
+import ConfirmAside from "@components/confirmBuy/ConfirmAside.astro";
+import ConfirmMain from "@components/confirmBuy/ConfirmMain.astro";
 ---
 
 <Layout title="Confirmar compra">
   <Container>
-    <h1>Confirmar compra</h1>
+    <div class="hidden md:flex flex-col gap-4 pt-8">
+      <a href="/buyPart" class="mr-2" aria-label="Return to buyPart">
+        <ArrowLeft />
+      </a>
+      <h1 class="text-2xl px-2">Carrito de compra</h1>
+    </div>
+    <main class="flex flex-col md:flex-row">
+      <section class="flex p-2">
+        <ConfirmMain />
+      </section>
+      <aside class="sticky p-2 md:overflow-y-auto w-full md:w-2/5">
+        <ConfirmAside />
+      </aside>
+    </main>
   </Container>
 </Layout>

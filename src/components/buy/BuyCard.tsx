@@ -1,5 +1,3 @@
-import React from "react";
-
 const items = [
   {
     id: 1,
@@ -38,7 +36,7 @@ const items = [
 const BuyCard = () => {
   return (
     <div>
-      <div className=" bg-CardBg flex flex-col rounded-lg overflow-hidden ">
+      <div className=" bg-CardBg flex flex-col rounded-lg  overflow-scroll ">
         {items.map((item) => (
           <div
             className="flex items-center justify-between  p-4 border-b gap-4 "
@@ -47,7 +45,7 @@ const BuyCard = () => {
             <img
               src={item.image}
               alt={item.name}
-              className="w-16 h-16 object-contain "
+              className="w-16 h-16 object-contain"
             />
             <div className="flex flex-col px-4">
               <h2 className="font-semibold text-black">{item.name}</h2>
