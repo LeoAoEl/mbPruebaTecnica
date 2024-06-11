@@ -10,7 +10,7 @@ const MainCard: React.FC = () => {
     <>
       {autopartes.map((au) => {
         return (
-          <a href="/buyAuto">
+          <a href="/buyPart">
             <ImgCard
               key={au.id}
               id={au.id}

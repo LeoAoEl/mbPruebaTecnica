@@ -8,7 +8,7 @@ import CheckBox from "./CheckBox";
 function RForm() {
   return (
     <main>
-      <section className="border border-slate-400 mt-10  rounded-md p-4">
+      <section className="border border-slate-400 mt-10  rounded-md p-4 font-redhat">
         <InfoMarca />
         <InfoCategoria />
         <InfoEmpresa />

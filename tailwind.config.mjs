@@ -16,6 +16,11 @@ export default {
         FooterTitle: "#0A142F",
         Fondo: "#f9f9fb",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        redhat: ["Red Hat Display", "sans-serif"],
+      },
     },
   },
   darkMode: "class",
