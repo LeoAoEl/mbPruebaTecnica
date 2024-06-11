@@ -1,5 +1,6 @@
 ---
 import Shield from "@assets/icons/buy/Shield.astro";
+import LaunchModal from "./LaunchModal";
 ---
 
 <aside class="flex flex-col">
@@ -19,23 +20,23 @@ import Shield from "@assets/icons/buy/Shield.astro";
       <span>Envío</span>
       <span class="text-medium">$ 250.00 MXN</span>
     </div>
-    <div class="flex flex-row justify-between items-center">
+    <div
+      class="flex flex-row justify-between items-center border-b-1 border-slate-200"
+    >
       <span class="uppercase">Total</span>
       <span class="text-medium">$ 1250.00 MXN</span>
     </div>
+    <span class="text-xs text-slate-400"
+      >Todas las transacciones son seguras y están encriptadas</span
+    >
 
-    <div class="items-center place-content-center flex justify-center">
-      <a
-        href="confirmBuy"
-        class="px-6 py-2 bg-black text-white text-lg rounded-lg">Pagar</a
-      >
-    </div>
+    <LaunchModal client:load />
   </section>
   <div class="py-4 flex items-center justify-center">
     <button
-      class="px-8 py-4 text-center text-lg bg-primary rounded-lg flex flex-row items-center"
+      class="px-6 py-2 text-center text-lg bg-primary rounded-lg flex flex-row items-center"
     >
-      <div class="bg-CardBg p-2 rounded-full">
+      <div class="bg-CardBg p-1 rounded-full">
         <Shield />
       </div>
       <span class="ml-4">Compra 100% segura</span>

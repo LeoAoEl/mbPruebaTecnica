@@ -4,7 +4,7 @@ import { Input } from "@nextui-org/react";
 interface BottonProps {
   placeholder: string;
   type: string;
-  label: string;
+  label?: string;
 }
 
 const Botton: React.FC<BottonProps> = ({ placeholder, type, label }) => {
