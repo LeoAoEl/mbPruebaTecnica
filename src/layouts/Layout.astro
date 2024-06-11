@@ -1,8 +1,9 @@
 ---
-import Footer from "@components/Footer.astro";
 import Navbar from "@components/Navbar.astro";
 import LoginNavbar from "@components/Login/LoginNavbar.astro";
+import ScreenSizeFooter from "@components/ScreenSizeFooter";
 import { ViewTransitions } from "astro:transitions";
+
 interface Props {
   title: string;
   description?: string;
@@ -22,19 +23,14 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="mb.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-      rel="stylesheet"
-    />
-
     <ViewTransitions />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-Fondo">
+  <body class="bg-Fondo">
     {isHomePage ? <LoginNavbar /> : <Navbar />}
     <main>
       <slot />
     </main>
-    {!isHomePage && !isRegisterPage && <Footer />}
+    {!isHomePage && !isRegisterPage && <ScreenSizeFooter client:load />}
   </body>
 </html>
