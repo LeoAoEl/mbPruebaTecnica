@@ -36,10 +36,10 @@ const items = [
 const BuyCard = () => {
   return (
     <div>
-      <div className=" bg-CardBg flex flex-col rounded-lg  overflow-scroll ">
+      <div className="flex flex-col gap-6">
         {items.map((item) => (
           <div
-            className="flex items-center justify-between  p-4 border-b gap-4 "
+            className="flex items-center p-4 gap-2 bg-CardBg rounded-lg"
             key={item.id}
           >
             <img
@@ -47,33 +47,35 @@ const BuyCard = () => {
               alt={item.name}
               className="w-16 h-16 object-contain"
             />
-            <div className="flex flex-col px-4">
-              <h2 className="font-semibold text-black">{item.name}</h2>
+            <div className="flex flex-col px-4 w-1/3">
+              <h2 className="font-semibold text-black break-words">
+                {item.name}
+              </h2>
               <button className="text-red-500 hover:underline justify-start text-left">
                 ELIMINAR
               </button>
             </div>
-            <div className=" flex-col items-center">
-              <div className="">
-                <button className="text-black border-black border rounded-full p-2">
-                  -
-                </button>
-                <span className="mx-2">1</span>
-                <button className="text-black border-black border rounded-full p-2">
-                  +
-                </button>
-              </div>
-              <div className=" flex mt-2">
-                <span className=" text-slate-400 text-xs text-center">
+            <div className="flex flex-grow justify-evenly items-center">
+              <div className="flex flex-col items-center">
+                <div className="flex items-center">
+                  <button className="text-black border-black border rounded-full p-2">
+                    -
+                  </button>
+                  <span className="mx-2">1</span>
+                  <button className="text-black border-black border rounded-full p-2">
+                    +
+                  </button>
+                </div>
+                <span className="text-slate-400 text-xs text-center mt-2">
                   10 disponibles
                 </span>
               </div>
-            </div>
-            <div className="text-right ">
-              <p className="text-lg font-semibold">
-                ${item.price.toFixed(2)} MXN
-              </p>
-              <p className="text-sm text-gray-500">{item.shipping}</p>
+              <div className="flex flex-col items-end">
+                <p className="text-lg font-semibold">
+                  ${item.price.toFixed(2)} MXN
+                </p>
+                <p className="text-sm text-gray-500">{item.shipping}</p>
+              </div>
             </div>
           </div>
         ))}

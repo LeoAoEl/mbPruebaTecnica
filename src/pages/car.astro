@@ -15,11 +15,11 @@ import BCrumbs from "@components/car/bCrumbs";
         <BCrumbs client:load />
       </div>
     </div>
-    <main class="flex">
-      <aside class="sticky top-0 h-screen min-h-screen p-2">
+    <main class="flex md:flex-row flex-col">
+      <aside class="lg:sticky lg:top-0 p-2 w-full">
         <AsideContent />
       </aside>
-      <section class="flex-1 overflow-y-auto p-2">
+      <section class="flex md:overflow-y-auto p-2">
         <MainContent />
       </section>
     </main>

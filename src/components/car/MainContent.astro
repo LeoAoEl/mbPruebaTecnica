@@ -4,7 +4,11 @@ import Grid4S from "@components/common/Grid4S.astro";
 import MainCard from "./MainCard";
 ---
 
-<IntroContent />
-<Grid4S>
-  <MainCard client:load />
-</Grid4S>
+<div class="flex flex-col">
+  <div>
+    <IntroContent />
+  </div>
+  <Grid4S>
+    <MainCard client:load />
+  </Grid4S>
+</div>

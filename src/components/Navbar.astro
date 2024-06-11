@@ -27,11 +27,22 @@ const { pathname } = Astro.url;
         <Menu />
       </div>
       <div class="flex items-center space-x-4 w-full lg:w-2/3">
-        <a
-          aria-label=" Home button"
-          class="font-bold text-2xl hidden sm:inline"
-          href="/home">LOGO</a
-        >
+        {
+          pathname === "/registrar" ? (
+            <span class="uppercase font-extrabold text-3xl font-montserrat">
+              Logo
+            </span>
+          ) : (
+            <a
+              aria-label=" Home button"
+              class="font-bold text-2xl hidden sm:inline font-montserrat"
+              href="/home"
+            >
+              LOGO
+            </a>
+          )
+        }
+
         <div class="relative w-full sm:w-auto flex-grow sm:flex-grow-0">
           <input
             placeholder="Bujía Mazda 3 de 2015"
@@ -60,7 +71,7 @@ const { pathname } = Astro.url;
               quality={"low"}
               format={"avif"}
               loading={"eager"}
-              class={" pt-1 cursor-pointer hidden md:inline"}
+              class={" pt-1 cursor-pointer hidden lg:inline"}
             />
           )
         }

@@ -6,7 +6,7 @@ const ScreenSizeFooter = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const handleResize = () => {
-    setIsSmallScreen(window.innerWidth <= 768);
+    setIsSmallScreen(window.innerWidth <= 1024);
   };
 
   useEffect(() => {

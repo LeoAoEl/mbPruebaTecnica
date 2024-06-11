@@ -3,6 +3,7 @@ import Navbar from "@components/Navbar.astro";
 import LoginNavbar from "@components/Login/LoginNavbar.astro";
 import ScreenSizeFooter from "@components/ScreenSizeFooter";
 import { ViewTransitions } from "astro:transitions";
+import "@fontsource/twinkle-star";
 
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const { title, description } = Astro.props;
     <ViewTransitions />
     <title>{title}</title>
   </head>
-  <body class="bg-Fondo">
+  <body class="bg-Fondo font-inter">
     {isHomePage ? <LoginNavbar /> : <Navbar />}
     <main>
       <slot />
