@@ -44,6 +44,7 @@ function Formulario() {
           placeholder="Contraseña"
           endContent={
             <button
+              aria-label="Show Form"
               className="focus:outline-none"
               type="button"
               onClick={toggleVisibility}
@@ -64,6 +65,7 @@ function Formulario() {
         <Switch size="sm">Recuérdame</Switch>
 
         <button
+          aria-label="Submit"
           type="submit"
           disabled={loading}
           className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-black bg-primary font-semibold uppercase rounded-xl text-xl text-center hover:bg-primary/45 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/15"

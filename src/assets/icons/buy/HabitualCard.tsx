@@ -52,7 +52,10 @@ const HabitualCard: React.FC = () => {
           <div className="flex flex-col items-center justify-center p-4  text-center">
             <p className="text-xl font-semibold">Precio total:</p>
             <p className="text-2xl font-bold">$ 850.00 MXN</p>
-            <button className="mt-4  border-black border text-black px-4 py-2 rounded">
+            <button
+              aria-label="simple button"
+              className="mt-4  border-black border text-black px-4 py-2 rounded"
+            >
               Agregar al carrito
             </button>
           </div>

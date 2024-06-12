@@ -3,7 +3,6 @@ import Rechazo from "./Rechazo";
 import {
   Modal,
   ModalContent,
-  ModalHeader,
   ModalBody,
   ModalFooter,
   Button,
@@ -18,7 +17,11 @@ const ConfirmModal: React.FC<ConfirmProps> = ({ isChecked }) => {
 
   return (
     <>
-      <Button className=" bg-black text-white" onPress={onOpen}>
+      <Button
+        aria-label="Show modal"
+        className=" bg-black text-white"
+        onPress={onOpen}
+      >
         Comprar
       </Button>
       <Modal
@@ -33,11 +36,19 @@ const ConfirmModal: React.FC<ConfirmProps> = ({ isChecked }) => {
               <ModalBody>{isChecked ? <Aceptado /> : <Rechazo />}</ModalBody>
               <ModalFooter className=" flex  justify-center">
                 {isChecked ? (
-                  <Button className=" bg-black text-white" onPress={onClose}>
+                  <Button
+                    aria-label="Close modal"
+                    className=" bg-black text-white"
+                    onPress={onClose}
+                  >
                     Seguir comprando
                   </Button>
                 ) : (
-                  <Button className=" bg-black text-white" onPress={onClose}>
+                  <Button
+                    className=" bg-black text-white"
+                    aria-label="return to modal"
+                    onPress={onClose}
+                  >
                     Reintentar
                   </Button>
                 )}

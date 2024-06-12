@@ -129,6 +129,7 @@ const AddVendedor: React.FC = () => {
         </div>
         <div className="flex items-center justify-center py-4">
           <button
+            aria-label="Enviar datos"
             type="submit"
             className="rounded-lg p-2 bg-black text-white hover:bg-slate-600"
           >

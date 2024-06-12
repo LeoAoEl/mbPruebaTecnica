@@ -51,18 +51,27 @@ const BuyCard = () => {
               <h2 className="font-semibold text-black break-words">
                 {item.name}
               </h2>
-              <button className="text-red-500 hover:underline justify-start text-left">
+              <button
+                aria-label="delete"
+                className="text-red-500 hover:underline justify-start text-left"
+              >
                 ELIMINAR
               </button>
             </div>
             <div className="flex flex-grow justify-evenly items-center">
               <div className="flex flex-col items-center">
                 <div className="flex items-center">
-                  <button className="text-black border-black border rounded-full p-2">
+                  <button
+                    aria-label="menos"
+                    className="text-black border-black border rounded-full p-2"
+                  >
                     -
                   </button>
                   <span className="mx-2">1</span>
-                  <button className="text-black border-black border rounded-full p-2">
+                  <button
+                    aria-label="más"
+                    className="text-black border-black border rounded-full p-2"
+                  >
                     +
                   </button>
                 </div>
