@@ -10,16 +10,15 @@ const MainCard: React.FC = () => {
     <>
       {autopartes.map((au) => {
         return (
-          <a href="/buyPart" aria-label="Go to buyPart">
-            <ImgCard
-              key={au.id}
-              id={au.id}
-              imagen={au.imagen}
-              nombre={au.nombre}
-              precio={au.precio}
-              sku={au.sku}
-            />
-          </a>
+          <ImgCard
+            key={au.id}
+            id={au.id}
+            imagen={au.imagen}
+            nombre={au.nombre}
+            precio={au.precio}
+            sku={au.sku}
+            ruta=""
+          />
         );
       })}
     </>

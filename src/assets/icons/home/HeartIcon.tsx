@@ -1,12 +1,61 @@
-function HeartIcon() {
+import { useState, useEffect } from "react";
+
+interface HeartIconProps {
+  autoparte: {
+    id: number;
+    precio: number;
+    nombre: string;
+    imagen: string;
+  };
+}
+
+const HeartIcon: React.FC<HeartIconProps> = ({ autoparte }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const existingFavorites = JSON.parse(
+      localStorage.getItem("favoritos") || "[]"
+    );
+    const isFavorited = existingFavorites.some(
+      (item: any) => item.id === autoparte.id
+    );
+    setIsFavorite(isFavorited);
+  }, [autoparte.id]);
+
+  const handleFavorite = () => {
+    const existingFavorites = JSON.parse(
+      localStorage.getItem("favoritos") || "[]"
+    );
+    let updatedFavorites;
+
+    if (isFavorite) {
+      updatedFavorites = existingFavorites.filter(
+        (item: any) => item.id !== autoparte.id
+      );
+    } else {
+      updatedFavorites = [
+        ...existingFavorites,
+        { ...autoparte, timestamp: new Date().getTime() },
+      ];
+    }
+
+    localStorage.setItem("favoritos", JSON.stringify(updatedFavorites));
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <svg
+      onClick={handleFavorite}
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      fill={isFavorite ? "currentColor" : "none"}
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="h-6 w-6 hover:fill-rose-600 transition-all ease-in-out cursor-pointer hover:text-rose-600"
+      className={`h-6 w-6 transition-all ease-in-out cursor-pointer ${
+        isFavorite
+          ? "text-rose-600 fill-rose-600"
+          : "hover:fill-rose-600 hover:text-rose-600"
+      }`}
     >
       <path
         strokeLinecap="round"
@@ -15,6 +64,6 @@ function HeartIcon() {
       />
     </svg>
   );
-}
+};
 
 export default HeartIcon;
