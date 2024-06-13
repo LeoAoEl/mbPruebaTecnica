@@ -18,6 +18,7 @@ const useMarcas = () => {
   const [marcas, setMarcas] = useState<MarcasProps[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const TTL = 12 * 60 * 60 * 1000; // 12 horas en milisegundos
 
   useEffect(() => {
     const fetchMarcas = async () => {
@@ -25,6 +26,9 @@ const useMarcas = () => {
         const response = await axios.get<ApiResponse>(getMarcasLink);
         if (response.data.success === 1) {
           setMarcas(response.data.content);
+          const now = new Date();
+          localStorage.setItem("marcas", JSON.stringify(response.data.content));
+          localStorage.setItem("marcasTimestamp", now.getTime().toString());
         } else {
           setError(response.data.mensaje || "Error desconocido");
         }
@@ -34,8 +38,19 @@ const useMarcas = () => {
         setLoading(false);
       }
     };
-    fetchMarcas();
+
+    const savedMarcas = localStorage.getItem("marcas");
+    const savedTimestamp = localStorage.getItem("marcasTimestamp");
+    const now = new Date().getTime();
+
+    if (savedMarcas && savedTimestamp && now - parseInt(savedTimestamp) < TTL) {
+      setMarcas(JSON.parse(savedMarcas));
+      setLoading(false);
+    } else {
+      fetchMarcas();
+    }
   }, []);
+
   return { marcas, loading, error };
 };
 

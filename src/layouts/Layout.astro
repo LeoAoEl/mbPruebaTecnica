@@ -27,7 +27,7 @@ const { title, description } = Astro.props;
     <ViewTransitions />
     <title>{title}</title>
   </head>
-  <body class="bg-Fondo font-inter">
+  <body class="bg-Fondo font-inter min-h-screen h-screen">
     {isHomePage ? <LoginNavbar /> : <Navbar />}
     <main>
       <slot />

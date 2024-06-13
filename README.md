@@ -1,7 +1,7 @@
-# Astro Starter Kit: Basics
+# mb Inovation Lab Prueba técnica
 
 ```sh
-npm create astro@latest -- --template basics
+npm create astro@latest
 ```
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
@@ -30,11 +30,9 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+SSR creada con `Astro`, `React`, `Tailwind`. La siguiente página es una prueba técnica de la la empresa `mb Innovation lab`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+Se hace mención de el uso de `axios` para el consumo de las apis y a su vez, el uso de `nextUi` para el uso de algunos pickers y selects.
 
 ## 🧞 Commands
 
